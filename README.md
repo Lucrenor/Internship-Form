@@ -8,8 +8,7 @@ This is an internship application form designed to accommodate users to apply Me
 - -Build Tool: ```"@angular-devkit/build-angular": "^18.1.4",
                   "@angular/cli": "^18.1.4",
                   "@angular/compiler-cli": "^18.1.0"```
-- Backend: Node.js
-- Server: Express.js
+- Backend: Spring Boot
 - Database: PostgreSQL
 
 ## Features
