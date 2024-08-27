@@ -1,0 +1,233 @@
+
+<div class="p-d-flex p-jc-center p-ai-center p-m-5">
+  <div class="p-card p-shadow-3 p-p-3 form-container">
+    <h2>MERGENTECH STAJ BAŞVURU FORMU</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="p-field">
+        <label for="username">Ad Soyad</label>
+        <input id="username" type="text" pInputText [(ngModel)]="formData.name" name="username" required (keypress)="validation.validateLetters($event)"/>
+      </div>
+      <div class="p-field">
+        <label for="email">E-mail Adresi</label>
+        <input type="email" id="email" pInputText [(ngModel)]="formData.mail" name="email" required placeholder="example@domain.com">
+        <div *ngIf="!validation.validateEmail(formData.mail) && formData.mail">
+          <small class="p-error">Lütfen geçerli bir e-mail adresi giriniz.</small>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="phone">Telefon Numarası</label>
+        <input type="tel" id="phone" pInputText [(ngModel)]="formData.tel_no" name="phone" required maxlength="17" pattern="[0-9]*" (keypress)="validation.validateNumber($event)" mask="0 (000) 000 00 00" placeholder="0 (xxx) xxx xx xx">
+      </div>
+      <div class="p-field">
+        <label for="university">Üniversite</label>
+        <input type="text" id="university" pInputText [(ngModel)]="formData.uni" name="university" required (keypress)="validation.validateLetters($event)"/>
+      </div>
+      <div class="p-field">
+        <label for="degree">Bölüm</label>
+        <input type="text" id="degree" pInputText [(ngModel)]="formData.degree" name="degree" required (keypress)="validation.validateLetters($event)"/>
+      </div>
+      <div class="p-field">
+        <label>Sınıfınız</label>
+        <div class="p-field-checkbox">
+          <p-radioButton inputId="class2" [(ngModel)]="formData.year" name="class" value="2.Sınıf"></p-radioButton>
+          <label>2.Sınıf</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-radioButton inputId="class3" [(ngModel)]="formData.year" name="class" value="3.Sınıf"></p-radioButton>
+          <label>3.Sınıf</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-radioButton inputId="class4" [(ngModel)]="formData.year" name="class" value="4.Sınıf"></p-radioButton>
+          <label>4.Sınıf</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-radioButton inputId="classOther" [(ngModel)]="formData.year" name="class" value="Diğer"></p-radioButton>
+          <label>Diğer</label>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="linkedin">Linkedin Linki</label>
+        <input type="url" id="linkedin" pInputText [(ngModel)]="formData.linkedin" name="linkedin" required placeholder="https://linkedin.com/in/username">
+        <div *ngIf="!validation.validateLinkedinUrl(formData.linkedin) && formData.linkedin">
+          <small class="p-error">Lütfen geçerli bir Linkedin adresi giriniz.</small>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="github">GitHub Linki</label>
+        <input type="url" id="github" pInputText [(ngModel)]="formData.github" name="github" required  placeholder="https://github.com/username">
+        <div *ngIf="!validation.validateGithubUrl(formData.github) && formData.github">
+          <small class="p-error">Lütfen geçerli bir GitHub adresi giriniz</small>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="cv">CV GoogleDocs Linki</label>
+        <input type="url" id="cv" pInputText [(ngModel)]="formData.cvFile" name="cvFile" required placeholder="https://docs.google.com">
+      </div>
+      <div class="p-field">
+        <label>Staj Tercihi</label>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship1" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Frontend Geliştirme"></p-checkbox>
+          <label>Frontend Geliştirme</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship2" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Backend Geliştirme"></p-checkbox>
+          <label>Backend Geliştirme</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship3" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Mobil Geliştirme"></p-checkbox>
+          <label>Mobil Geliştirme</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship4" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Devops"></p-checkbox>
+          <label>Devops</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship5" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Sistem Destek"></p-checkbox>
+          <label>Sistem Destek</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship6" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Ürün Geliştirme"></p-checkbox>
+          <label>Ürün Geliştirme</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship7" name="internship-preferences" [(ngModel)]="formData.intern_type" value="İnsan Kaynakları"></p-checkbox>
+          <label>İnsan Kaynakları</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship8" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Eğitim Teknolojileri"></p-checkbox>
+          <label>Eğitim Teknolojileri</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship9" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Pazarlama"></p-checkbox>
+          <label>Pazarlama</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="internship10" name="internship-preferences" [(ngModel)]="formData.intern_type" value="Diğer"></p-checkbox>
+          <label>Diğer:</label>
+        </div>
+      </div>
+      <div class="rating-form">
+        <label>Programlama Dilleri</label>
+        <form>
+          <table>
+            <thead>
+            <tr>
+              <th></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Java</td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="0"></td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="1"></td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="2"></td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="3"></td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="4"></td>
+              <td><input type="radio" name="Java" [(ngModel)]="formData.prog_lan.Java" value="5"></td>
+            </tr>
+            <tr>
+              <td>C#</td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="0"></td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="1"></td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="2"></td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="3"></td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="4"></td>
+              <td><input type="radio" name="csharp" [(ngModel)]="formData.prog_lan.Csharp" value="5"></td>
+            </tr>
+            <tr>
+              <td>Flutter</td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="0"></td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="1"></td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="2"></td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="3"></td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="4"></td>
+              <td><input type="radio" name="Flutter" [(ngModel)]="formData.prog_lan.Flutter" value="5"></td>
+            </tr>
+            <tr>
+              <td>Angular</td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="0"></td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="1"></td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="2"></td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="3"></td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="4"></td>
+              <td><input type="radio" name="Angular" [(ngModel)]="formData.prog_lan.Angular" value="5"></td>
+            </tr>
+            <tr>
+              <td>HTML</td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="0"></td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="1"></td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="2"></td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="3"></td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="4"></td>
+              <td><input type="radio" name="HTML" [(ngModel)]="formData.prog_lan.HTML" value="5"></td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="0"></td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="1"></td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="2"></td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="3"></td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="4"></td>
+              <td><input type="radio" name="CSS" [(ngModel)]="formData.prog_lan.CSS" value="5"></td>
+            </tr>
+            <tr>
+              <td>Bash</td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="0"></td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="1"></td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="2"></td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="3"></td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="4"></td>
+              <td><input type="radio" name="Bash" [(ngModel)]="formData.prog_lan.Bash" value="5"></td>
+            </tr>
+            <tr>
+              <td>SQL</td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="0"></td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="1"></td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="2"></td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="3"></td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="4"></td>
+              <td><input type="radio" name="SQL" [(ngModel)]="formData.prog_lan.SQL" value="5"></td>
+            </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="p-field">
+        <label>Staj Tarihi</label>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="date1" name="internship-dates" [(ngModel)]="formData.start_date" value="1.7.2024 -29.7.2024"></p-checkbox>
+          <label>1 Temmuz - 29 Temmuz</label>
+        </div>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="date2" name="internship-dates" [(ngModel)]="formData.start_date" value="5.8.2024-2.9.2024"></p-checkbox>
+          <label>5 Ağustos - 2 Eylül</label>
+        </div>
+      </div>
+      <div class="p-field">
+        <label>Eskişehir ofisinde yüz yüze staj katılımı gösterebilirim.</label>
+        <div class="p-field-checkbox">
+          <p-checkbox inputId="acceptance" name="acceptance" [(ngModel)]="formData.onay" value="Kabul Ediyorum"></p-checkbox>
+          <label>Kabul Ediyorum.</label>
+        </div>
+      </div>
+      <div class="p-field">
+        <label id="kvkk">Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni Kabulü</label>
+        <a  href="https://drive.google.com/file/d/18Vek7U8RhvqcRW05Qf7lohnXq7WK4iex/view" target="_blank">Aydınlatma Metnine Gitmek İçin Tıklayınız.</a>
+        <div id="kvkk-box"  class="p-field-checkbox">
+          <p-checkbox inputId="consent" name="consent" [(ngModel)]="formData.kabul" value="Kabul Ediyorum"></p-checkbox>
+          <label>Kabul Ediyorum.</label>
+        </div>
+      </div>
+      <div class="p-d-flex p-jc-center p-mt-3">
+        <button type="submit">Başvuruyu Kaydet</button>
+      </div>
+    </form>
+  </div>
+</div>
+

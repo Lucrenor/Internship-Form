@@ -1,0 +1,35 @@
+<div class="p-card p-shadow-3 p-p-3">
+  <div class="info-container">
+    <p-card>
+      <iframe id="map-canvas" class="map_part"
+              width="1200"  height="450"
+              frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+              src="https://maps.google.com/maps?width=100%&amp;height=100%&amp;hl=en&amp;q=Eskişehir, Turkey&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+              <a href="https://embedgooglemaps.com"></a>
+              <a href="https://yatzyregler.com/no/"></a>
+      </iframe>
+      <p-splitter [style]="{ height: '200px' }" styleClass="mb-5">
+        <ng-template pTemplate>
+          <div class="col flex align-items-center justify-content-center custom">
+            <h2>OFİSLERİMİZ</h2>
+            <p><i class="mb-3 pi pi-home text-2xl text-color-secondary"></i>
+              <b>Adres:</b> ESOGÜ Meşelik Kampüsü ETGB Osmangazi Teknopark No: 59/102 Odunpazarı / ESKİŞEHİR</p>
+            <p><i class="mb-3 pi pi-address-book text-2xl text-color-secondary"></i>
+              <b>Telefon:</b> 0 (222) 2242700</p>
+            <p><i class="mb-3 pi pi-inbox text-2xl text-color-secondary"></i>
+              <b>E-Mail:</b> <a href="mailto:info&#64;mergentech.com.tr"> info&#64;mergentech.com.tr</a></p>
+          </div>
+        </ng-template>
+        <ng-template pTemplate>
+          <div class="col flex align-items-center justify-content-center custom">
+            <h2>ÇALIŞMA SAATLERİ</h2>
+            <p><i class="mb-3 pi pi-clock text-2xl text-color-secondary"></i>
+              Pazartesi - Cuma 08:30 - 18:30</p>
+            <p><i class="mb-3 pi pi-calendar-clock text-2xl text-color-secondary"></i>
+              Cumartesi Pazar - Kapalı</p>
+          </div>
+        </ng-template>
+      </p-splitter>
+    </p-card>
+  </div>
+</div>

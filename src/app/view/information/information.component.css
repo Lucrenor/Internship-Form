@@ -1,0 +1,43 @@
+.p-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-container{
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.text{
+  color: #2b3f87;
+}
+
+h2{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: x-large;
+  text-align: justify;
+  color: #2b3f87;
+}
+
+.custom{
+  margin-left: 1rem;
+}
+
+p{
+  color: #141619;
+}
+
+a{
+  text-decoration: none;
+  color: #419be1;
+  font-weight: bolder;
+}
+a:hover {
+  color: #2b3f87;
+}
